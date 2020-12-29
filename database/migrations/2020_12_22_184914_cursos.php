@@ -13,7 +13,12 @@ class Cursos extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('cursos', function (Blueprint $table){
+            $table->id();
+            $table->string('name');
+            $table->text('description');
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class Cursos extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('cursos');
     }
 }
